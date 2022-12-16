@@ -1,0 +1,13 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:sec="http://www.springframework.org/security/tags"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:panelGroup layout="block">
+        <p:menubar >
+            <p:menuitem value="Lista" url="/eszkoz-lista.jsf" action="#{eszkozUIController.refreshProductsList()}"/>
+            <p:menuitem value="Új elem" url="/eszkoz-uj.jsf" />
+        </p:menubar >
+    </h:panelGroup>
+</ui:composition>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:include src="menu.xhtml"/>
+
+    <h:form method="get">
+    <p:dataTable id="table" var="tool"
+                 value="#{eszkozUIController.products}">
+    <p:column>
+        <f:facet name="header">#</f:facet>
+        <h:outputText value="#{tool.id}" />
+    </p:column>
+    <p:column>
+        <f:facet name="header">Márka</f:facet>
+        <h:outputText value="#{tool.marka}" />
+    </p:column>
+    <p:column>
+        <f:facet name="header">Típus</f:facet>
+        <h:outputText value="#{tool.tipus}">
+        </h:outputText>
+    </p:column>
+    <p:column>
+        <f:facet name="header">Leírás</f:facet>
+        <h:outputText value="#{tool.leiras}">
+        </h:outputText>
+    </p:column>
+    <p:column>
+        <f:facet name="header">Jelleg</f:facet>
+        <h:outputText value="#{tool.jelleg}" />
+    </p:column>
+    <p:column>
+        <f:facet name="header">Tulajdonos</f:facet>
+        <h:outputText value="#{tool.tulajdonos.nev}" />
+    </p:column>
+    &nbsp;
+    <p:column id="action">
+        <f:facet name="header">Módosítások</f:facet>
+        <p:commandButton value="Edit" action="#{eszkozUIController.editTool(tool.id)}" />
+        <p:commandButton value="Delete" action="#{eszkozUIController.deleteTool(tool.id)}"/>
+    </p:column>
+    </p:dataTable>
+    </h:form>
+ </html>

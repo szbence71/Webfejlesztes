@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:include src="menu.xhtml"/>
+        <h:form method="post" >
+            <p:autoUpdate/>
+            <p:panelGrid columns="1" styleClass="ui-fluid center ui-noborder">
+                <h:outputText rendered="#{eszkozUIController.hasError}" value="#{eszkozUIController.error}" styleClass="alert alert-danger" />
+                <p:inputText id="marka" name="marka"  placeholder="Márka" value="#{eszkozUIController.marka}" />
+                <p:inputText id="tipus" name="tipus"  placeholder="Típus" value="#{eszkozUIController.tipus}" />
+                <p:inputText id="leiras" name="leiras"  placeholder="Leírás" value="#{eszkozUIController.leiras}" />
+                <p:inputText id="jelleg" name="jelleg"  placeholder="Jelleg" value="#{eszkozUIController.jelleg}" />
+                <p:commandButton value="Mentés" action="#{eszkozUIController.saveChanges}"/>
+            </p:panelGrid>
+        </h:form>
+</html>
